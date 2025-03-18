@@ -13,7 +13,7 @@ for round_number in range(1, NUM_ROUNDS + 1):
   my_random_num:int = random.randint(1, 100)
   computer_random_num:int = random.randint(1, 100)
 
-  st.write(f'Round {round_number}')
+  NUM_ROUNDS.text(f'Round {round_number}')
   st.write("-" * 30)
   st.write(f"Your number is {my_random_num}")
   if "user_guess" not in st.session_state:
