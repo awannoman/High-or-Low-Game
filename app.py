@@ -16,8 +16,10 @@ for round_number in range(1, NUM_ROUNDS + 1):
   st.write(f'Round {round_number}')
   st.write("-" * 30)
   st.write(f"Your number is {my_random_num}")
+  if "user_guess" not in st.session_state:
+    st.session_state.user_guess = ""
 
-  user_guess = st.text_input("Do you think your number is Higher or lower than the computer's?: ").lower()
+  user_guess = st.text_input("Enter your guess (Higher/Lower):", key="user_guess").lower()
 
   if ((user_guess == "higher" and computer_random_num > my_random_num)
   or (user_guess == "lower" and computer_random_num < my_random_num)):
